@@ -3,11 +3,10 @@
 	<parent>
 		<groupId>de.invesdwin</groupId>
 		<artifactId>invesdwin-bom</artifactId>
-		<version>1.0.18-SNAPSHOT</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<version>1.0.17</version>
 	</parent>
 	<artifactId>invesdwin-instrument</artifactId>
-	<version>1.0.15-SNAPSHOT</version>
+	<version>1.0.14</version>
 	<packaging>jar</packaging>
 
 	<licenses>
@@ -24,7 +23,7 @@
 
 		<version.maven-source-plugin>3.0.1</version.maven-source-plugin>
 		<version.maven-processor-plugin>4.5-jdk8</version.maven-processor-plugin>
-		<project.version.invesdwin-maven-plugin>1.0.14-SNAPSHOT</project.version.invesdwin-maven-plugin>
+		<project.version.invesdwin-maven-plugin>1.0.13</project.version.invesdwin-maven-plugin>
 		<version.maven-jar-plugin>3.0.2</version.maven-jar-plugin>
 		<version.maven-jdk-tools-wrapper>0.1</version.maven-jdk-tools-wrapper>
 	</properties>
@@ -85,13 +84,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-suite-engine</artifactId>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -206,7 +200,7 @@
 		</plugins>
 	</build>
 
-	<distributionManagement>
+	<!--<distributionManagement>
 		<repository>
 			<id>invesdwin-oss</id>
 			<name>invesdwin-oss</name>
@@ -216,6 +210,18 @@
 			<id>invesdwin-oss</id>
 			<name>invesdwin-oss</name>
 			<url>https://invesdwin.de/repo/invesdwin-oss</url>
+		</snapshotRepository>
+	</distributionManagement>-->
+
+	<distributionManagement>
+		<repository>
+			<id>release</id>
+			<url>https://github.com/rchemist/release-invesdwin-instrument/raw/main/releases</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>snapshot</id>
+			<url>https://github.com/rchemist/release-invesdwin-instrument/raw/main/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -235,7 +241,7 @@
 	<scm>
 		<url>https://github.com/invesdwin/invesdwin-instrument</url>
 		<connection>scm:git:https://github.com/invesdwin/invesdwin-instrument.git</connection>
-		<tag>HEAD</tag>
+		<tag>invesdwin-instrument-1.0.14</tag>
 	</scm>
 
 	<ciManagement>

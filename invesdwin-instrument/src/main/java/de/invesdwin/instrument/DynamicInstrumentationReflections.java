@@ -48,7 +48,7 @@ public final class DynamicInstrumentationReflections {
             synchronized (ucp) {
                 final Field pathField = ucp.getClass().getDeclaredField("path");
                 final ArrayList<URL> path = (ArrayList<URL>) unsafe.getObject(ucp, unsafe.objectFieldOffset(pathField));
-                return path.toArray(new URL[0]);
+                return path.toArray(new URL[path.size()]);
             }
         } catch (final NoSuchFieldException e) {
             throw new RuntimeException(e);
@@ -199,7 +199,7 @@ public final class DynamicInstrumentationReflections {
             final String existingJavaLibraryPath = System.getProperty(javaLibraryPathKey);
             //CHECKSTYLE:ON
             final String newJavaLibraryPath;
-            if (!org.springframework.util.StringUtils.hasLength(existingJavaLibraryPath)) {
+            if (!org.springframework.util.StringUtils.isEmpty(existingJavaLibraryPath)) {
                 newJavaLibraryPath = existingJavaLibraryPath + File.pathSeparator + dir.getAbsolutePath();
             } else {
                 newJavaLibraryPath = dir.getAbsolutePath();
