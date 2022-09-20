@@ -10,7 +10,10 @@ public class DynamicInstrumentationLoaderTest {
     @Test
     public void test() {
         DynamicInstrumentationLoader.waitForInitialized();
-        DynamicInstrumentationLoader.initLoadTimeWeavingContext();
+
+        // must set --add-opens java.base/java.lang=ALL-UNNAMED
+
+        //DynamicInstrumentationLoader.initLoadTimeWeavingContext();
     }
 
 }

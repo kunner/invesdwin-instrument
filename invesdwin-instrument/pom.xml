@@ -6,7 +6,7 @@
 		<version>1.0.17</version>
 	</parent>
 	<artifactId>invesdwin-instrument</artifactId>
-	<version>1.0.14</version>
+	<version>1.0.14.1</version>
 	<packaging>jar</packaging>
 
 	<licenses>
@@ -19,13 +19,15 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<version.compiler>1.8</version.compiler>
+		<version.compiler>17</version.compiler>
 
 		<version.maven-source-plugin>3.0.1</version.maven-source-plugin>
 		<version.maven-processor-plugin>4.5-jdk8</version.maven-processor-plugin>
 		<project.version.invesdwin-maven-plugin>1.0.13</project.version.invesdwin-maven-plugin>
 		<version.maven-jar-plugin>3.0.2</version.maven-jar-plugin>
 		<version.maven-jdk-tools-wrapper>0.1</version.maven-jdk-tools-wrapper>
+		<version.spring>6.0.0-M6</version.spring>
+		<version.spring-data>3.0.0-M5</version.spring-data>
 	</properties>
 
 	<dependencyManagement>
@@ -229,6 +231,15 @@
 		<repository>
 			<id>invesdwin-oss</id>
 			<url>https://invesdwin.de/repo/invesdwin-oss-remote</url>
+		</repository>
+		<repository>
+			<id>spring-snapshots</id>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots><enabled>true</enabled></snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<url>https://repo.spring.io/milestone</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
